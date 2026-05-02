@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Encyclopedia 2026: 90+ Terms, Tools & Guides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI Encyclopedia 2026: 90+ key terms, tools and concepts in AI, ML, and Generative AI with mixed EN/RU explanations." />
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-elevated: #0b0e16;
+      --card: #101421;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.18);
+      --accent-strong: rgba(129, 140, 248, 0.55);
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(156, 163, 175, 0.25);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 0 1px rgba(129, 140, 248, 0.25), 0 0 40px rgba(79, 70, 229, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 90%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 48px;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    header.hero {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(17, 24, 39, 0.98));
+      border-radius: 32px;
+      padding: 28px 28px 22px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: 0.5;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(129, 140, 248, 0.2) 0, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(45, 212, 191, 0.18) 0, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .badge-main {
+      padding: 4px 11px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .badge-sub {
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(79, 70, 229, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-sub span {
+      font-size: 10px;
+      opacity: 0.8;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 3vw, 32px);
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(to right, #a5b4fc, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.8);
+    }
+
+    .hero-meta-item strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.7);
+    }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #6366f1, #4f46e5);
+      color: #f9fafb;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 14px 40px rgba(79, 70, 229, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary span {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover::after {
+      opacity: 0.4;
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: var(--text-muted);
+      padding: 7px 12px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .hero-right {
+      border-radius: 24px;
+      background: radial-gradient(circle at top, rgba(79, 70, 229, 0.25), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      padding: 14px 14px 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .hero-right-inner {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .hero-right-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .hero-right-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .hero-right-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(79, 70, 229, 0.6);
+      color: #bfdbfe;
+    }
+
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-stat-card {
+      background: radial-gradient(circle at top left, rgba(55, 65, 81, 0.5), rgba(15, 23, 42, 0.98));
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 8px 9px 7px;
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .hero-stat-value {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-stat-sub {
+      font-size: 11px;
+      color: #6ee7b7;
+    }
+
+    .hero-list {
+      margin-top: 4px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 7px 8px 7px;
+      max-height: 152px;
+      overflow: hidden;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-list-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 3px 0;
+    }
+
+    .hero-list-term {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-list-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(129, 140, 248, 0.8);
+    }
+
+    .hero-list-pill {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: rgba(15, 23, 42, 0.98);
+      color: #c4b5fd;
+    }
+
+    .hero-glow-orbit {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.16;
+      background:
+        radial-gradient(circle at 10% 120%, rgba(129, 140, 248, 0.85), transparent 55%),
+        radial-gradient(circle at 90% -40%, rgba(45, 212, 191, 0.7), transparent 60%);
+    }
+
+    main {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.1fr);
+      gap: 18px;
+    }
+
+    .panel {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 22px;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 16px 16px 14px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .panel-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .panel-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 30px 8px 28px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: rgba(148, 163, 184, 0.8);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .search-kbd {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      cursor: pointer;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .chip.active {
+      border-color: rgba(129, 140, 248, 0.9);
+      background: rgba(37, 99, 235, 0.18);
+      color: #e5e7eb;
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.4);
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .stats-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.98);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stats-pill strong {
+      color: #e5e7eb;
+    }
+
+    .term-list {
+      margin-top: 6px;
+      border-radius: 16px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      max-height: 520px;
+      overflow: auto;
+      padding: 8px 10px 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(55, 65, 81, 0.9) transparent;
+    }
+
+    .term-list::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .term-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .term-list::-webkit-scrollbar-thumb {
+      background: rgba(55, 65, 81, 0.9);
+      border-radius: 999px;
+    }
+
+    .term-item {
+      border-radius: 12px;
+      padding: 8px 8px 7px;
+      border: 1px solid transparent;
+      display: grid;
+      grid-template-columns: minmax(0, 3.5fr) minmax(0, 1.8fr);
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .term-item:nth-child(2n) {
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.99), rgba(15, 23, 42, 0.96));
+    }
+
+    .term-item.highlighted {
+      border-color: rgba(129, 140, 248, 0.9);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.3);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.98));
+    }
+
+    .term-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .term-name {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .term-tag {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #a5b4fc;
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .term-meta {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .term-desc {
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .term-right {
+      font-size: 10px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .term-label {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .term-tagline {
+      font-size: 10px;
+      max-width: 190px;
+    }
+
+    .term-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: flex-end;
+    }
+
+    .term-link-pill {
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px dashed rgba(55, 65, 81, 0.9);
+      color: #93c5fd;
+    }
+
+    .sidebar-section {
+      margin-bottom: 14px;
+    }
+
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #e5e7eb;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .quick-list {
+      font-size: 11px;
+      color: var(--text-muted);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      padding: 8px 9px;
+    }
+
+    .quick-item {
+      padding: 4px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .quick-item span:first-child {
+      color: #e5e7eb;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.95);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .pill.hot {
+      border-color: rgba(248, 113, 113, 0.9);
+      color: #fecaca;
+      background: rgba(127, 29, 29, 0.4);
+    }
+
+    .pill.cool {
+      border-color: rgba(59, 130, 246, 0.9);
+      color: #bfdbfe;
+      background: rgba(30, 64, 175, 0.4);
+    }
+
+    .pill.neutral {
+      border-color: rgba(52, 211, 153, 0.9);
+      color: #bbf7d0;
+      background: rgba(6, 95, 70, 0.4);
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      header.hero {
+        padding: 18px 16px 14px;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 10px 32px;
+      }
+
+      header.hero {
+        border-radius: 22px;
+      }
+
+      .panel {
+        border-radius: 18px;
+        padding: 14px 12px 12px;
+      }
+
+      .term-item {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .term-right {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-glow-orbit"></div>
+      <div class="hero-inner">
+        <div>
+          <div class="badge-row">
+            <div class="badge-main">
+              <span class="badge-dot"></span>
+              <span>AI Encyclopedia · 2026 Edition</span>
+            </div>
+            <div class="badge-sub">
+              <span>Public · Open reference</span>
+            </div>
+          </div>
+          <h1 class="hero-title">
+            AI Encyclopedia 2026: <span class="highlight">90+ Terms, Tools & Guides</span>
+          </h1>
+          <p class="hero-subtitle">
+            Mixed EN/RU glossary for founders, makers и тех, кто хочет быстро ориентироваться в мире AI, ML и agentic systems.
+            Термины — на английском, объяснения — понятным русским.
+          </p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Updated: <strong>2026</strong></span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span><strong>90+</strong> entries · A–Z</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Focus: <strong>GenAI · Agents · Safety</strong></span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="scrollToGlossary()">
+              Browse glossary
+              <span>Поиск + фильтры по категориям</span>
+            </button>
+            <button class="btn-ghost" type="button" onclick="scrollToGlossary()">
+              A–Z Terms overview
+            </button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-right-inner">
+            <div class="hero-right-header">
+              <div class="hero-right-title">AI Landscape · Snapshot</div>
+              <div class="hero-right-tag">2026</div>
+            </div>
+            <div class="hero-stat-grid">
+              <div class="hero-stat-card">
+                <div class="hero-stat-label">Core Concepts & ML</div>
+                <div class="hero-stat-value">30+</div>
+                <div class="hero-stat-sub">Basics, theory, metrics</div>
+              </div>
+              <div class="hero-stat-card">
+                <div class="hero-stat-label">GenAI & Agents</div>
+                <div class="hero-stat-value">40+</div>
+                <div class="hero-stat-sub">LLMs, RAG, tools</div>
+              </div>
+            </div>
+            <div class="hero-list">
+              <div class="hero-list-row">
+                <div class="hero-list-term">
+                  <span class="hero-list-dot"></span>
+                  <span>Agentic AI · RAG · World Models</span>
+                </div>
+                <span class="hero-list-pill">Trends · 2026</span>
+              </div>
+              <div class="hero-list-row">
+                <div class="hero-list-term">
+                  <span class="hero-list-dot"></span>
+                  <span>Prompt Engineering → Prompt Design</span>
+                </div>
+                <span class="hero-list-pill">From tricks to discipline</span>
+              </div>
+              <div class="hero-list-row">
+                <div class="hero-list-term">
+                  <span class="hero-list-dot"></span>
+                  <span>Safety, Alignment, Governance</span>
+                </div>
+                <span class="hero-list-pill">Not только для корпораций</span>
+              </div>
+              <div class="hero-list-row">
+                <div class="hero-list-term">
+                  <span class="hero-list-dot"></span>
+                  <span>MCP · Tools API · Function Calling</span>
+                </div>
+                <span class="hero-list-pill">Connect AI to real world</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="glossary">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">AI Glossary · A–Z</div>
+            <div class="panel-subtitle">Search, filter by category и читай краткие русские объяснения ключевых AI‑терминов.</div>
+          </div>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            class="search-input"
+            id="searchInput"
+            placeholder="Поиск по названию, категории или описанию (например, &quot;RAG&quot; или &quot;embedding&quot;)..."
+          />
+          <div class="search-kbd">Ctrl/⌘ + F</div>
+        </div>
+
+        <div class="filter-chips" id="categoryChips">
+          <button class="chip active" data-category="all">All</button>
+          <button class="chip" data-category="Core Concepts">Core Concepts</button>
+          <button class="chip" data-category="Machine Learning">Machine Learning</button>
+          <button class="chip" data-category="Generative AI">Generative AI</button>
+          <button class="chip" data-category="Agents & Tools">Agents & Tools</button>
+          <button class="chip" data-category="Data & Infra">Data & Infra</button>
+          <button class="chip" data-category="Safety & Ethics">Safety & Ethics</button>
+          <button class="chip" data-category="Metrics & Eval">Metrics & Eval</button>
+        </div>
+
+        <div class="stats-row" id="statsRow">
+          <div class="stats-pill">
+            <span>Visible terms:</span>
+            <strong id="visibleCount">0</strong>
+          </div>
+          <div class="stats-pill">
+            <span>Selected category:</span>
+            <strong id="selectedCategoryLabel">All</strong>
+          </div>
+        </div>
+
+        <div class="term-list" id="termList">
+          <!-- Terms will be injected by JS -->
+        </div>
+
+        <div class="footer-note">
+          Tip: нажми по названию термина, чтобы скопировать его в буфер обмена.
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="sidebar-section">
+          <div class="sidebar-title">How to use this page</div>
+          <div class="sidebar-subtitle">
+            Небольшие подсказки, как быстрее выжимать пользу из словаря.
+          </div>
+          <div class="quick-list">
+            <div class="quick-item">
+              <span>Founders & PMs</span>
+              <span>Use as spec‑cheatsheet для общения с AI‑командой.</span>
+            </div>
+            <div class="quick-item">
+              <span>Designers</span>
+              <span>Понимать ограничения и возможности GenAI до прототипа.</span>
+            </div>
+            <div class="quick-item">
+              <span>Engineers</span>
+              <span>Быстро освежить/выровнять терминологию по смежным областям.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Hot topics · 2026</div>
+          <div class="sidebar-subtitle">
+            Темы, которые чаще всего всплывают в статьях, докладах и roadmap‑ах.
+          </div>
+          <div class="pill-row">
+            <div class="pill hot">Agentic AI</div>
+            <div class="pill hot">World Models</div>
+            <div class="pill hot">AI Safety</div>
+            <div class="pill cool">Multimodal LLMs</div>
+            <div class="pill cool">RAG 2.0</div>
+            <div class="pill neutral">Tooling & Orchestration</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Practical prompts</div>
+          <div class="sidebar-subtitle">
+            Идеи, как использовать энциклопедию вместе с любым LLM.
+          </div>
+          <div class="quick-list">
+            <div class="quick-item">
+              <span>Explain like I'm 10</span>
+              <span>Проси модель переписать термин своими словами.</span>
+            </div>
+            <div class="quick-item">
+              <span>Compare terms</span>
+              <span>Например: RAG vs Fine‑tuning vs Tools API.</span>
+            </div>
+            <div class="quick-item">
+              <span>Design patterns</span>
+              <span>Спросить: &laquo;как эти 3 термина связаны в реальном продукте?&raquo;</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    const TERMS = [
+      // Core Concepts
+      {
+        term: "AI (Artificial Intelligence)",
+        category: "Core Concepts",
+        tags: ["Fundamentals"],
+        level: "Intro",
+        tagline: "Зонтичный термин для систем, которые выполняют &laquo;умные&raquo; задачи.",
+        description:
+          "Широкий термин для систем, имитирующих или усиливающих человеческий интеллект: восприятие, понимание, принятие решений. Включает rule-based системы, классический ML и современные LLM.",
+        links: ["ML", "AGI", "GenAI"]
+      },
+      {
+        term: "AGI (Artificial General Intelligence)",
+        category: "Core Concepts",
+        tags: ["Speculative"],
+        level: "Advanced",
+        tagline: "Гипотетический уровень AI с широкими человеческими когнитивными способностями.",
+        description:
+          "AGI — это система, которая может выполнять любые интеллектуальные задачи на уровне человека или лучше, обобщая знания между доменами. В 2026 году AGI остаётся исследовательской целью и предметом дискуссий.",
+        links: ["AI Safety", "Alignment"]
+      },
+      {
+        term: "Narrow AI",
+        category: "Core Concepts",
+        tags: ["Real-world"],
+        level: "Intro",
+        tagline: "Системы, решающие узкие задачи: перевод, классификация, рекомендации.",
+        description:
+          "Практически все используемые сегодня AI‑системы — узкоспециализированные (narrow): они дают впечатляющие результаты, но в рамках ограниченного набора задач и данных.",
+        links: ["ML", "GenAI"]
+      },
+      {
+        term: "Machine Learning (ML)",
+        category: "Machine Learning",
+        tags: ["Fundamentals"],
+        level: "Intro",
+        tagline: "Обучение моделей на данных вместо жёсткого программирования правил.",
+        description:
+          "ML — это набор методов, где алгоритмы учатся на данных, чтобы делать прогнозы или принимать решения. Классические примеры: линейная регрессия, деревья решений, градиентный бустинг, нейросети.",
+        links: ["Supervised Learning", "Unsupervised Learning", "Deep Learning"]
+      },
+      {
+        term: "Supervised Learning",
+        category: "Machine Learning",
+        tags: ["Supervised"],
+        level: "Intro",
+        tagline: "Обучение по размеченным примерам &laquo;вход → правильный ответ&raquo;.",
+        description:
+          "Модель получает примеры (features) и целевые значения (labels) и учится приближать функцию, которая связывает одно с другим. Примеры задач: классификация, регрессия.",
+        links: ["Regression", "Classification", "Loss Function"]
+      },
+      {
+        term: "Unsupervised Learning",
+        category: "Machine Learning",
+        tags: ["Unsupervised"],
+        level: "Intermediate",
+        tagline: "Поиск структуры в неразмеченных данных.",
+        description:
+          "Алгоритмы ищут кластеризацию, аномалии или снижают размерность без явных меток. Примеры: k-means, PCA, автоэнкодеры.",
+        links: ["Clustering", "Dimensionality Reduction"]
+      },
+      {
+        term: "Reinforcement Learning (RL)",
+        category: "Machine Learning",
+        tags: ["RL"],
+        level: "Advanced",
+        tagline: "Агент учится действовать, получая вознаграждение за хорошие решения.",
+        description:
+          "RL моделирует взаимодействие агента с окружением. Агент выбирает действия, наблюдает состояние и награду и оптимизирует долгосрочный reward. В современных LLM применяется в виде RLHF и RLAIF.",
+        links: ["RLHF", "RLAIF", "Policy"]
+      },
+      {
+        term: "Deep Learning",
+        category: "Machine Learning",
+        tags: ["Neural Nets"],
+        level: "Intermediate",
+        tagline: "Нейросети с несколькими слоями для обучения сложных представлений.",
+        description:
+          "Deep Learning использует архитектуры вроде CNN, RNN и Transformer для обработки изображений, текста, аудио и других типов данных. Основная идея — автоматически выучивать иерархию признаков.",
+        links: ["Neural Network", "Transformer"]
+      },
+      {
+        term: "Neural Network",
+        category: "Machine Learning",
+        tags: ["Neural Nets"],
+        level: "Intro",
+        tagline: "Сеть из &laquo;нейронов&raquo; с весами, которые настраиваются в процессе обучения.",
+        description:
+          "Математические функции, соединённые в слои. Веса обновляются методом градиентного спуска для минимизации функции потерь. Основа большинства современных AI‑систем.",
+        links: ["Deep Learning", "Backpropagation"]
+      },
+      {
+        term: "Transformer",
+        category: "Generative AI",
+        tags: ["Architecture"],
+        level: "Intermediate",
+        tagline: "Архитектура, лежащая в основе современных LLM.",
+        description:
+          "Transformer использует механизмы self-attention для работы с последовательностями. Он заменил RNN во многих задачах NLP и стал стандартом для LLM, мультимодальных моделей и даже некоторых vision‑задач.",
+        links: ["LLM", "Attention"]
+      },
+
+      // Generative AI
+      {
+        term: "Generative AI (GenAI)",
+        category: "Generative AI",
+        tags: ["GenAI"],
+        level: "Intro",
+        tagline: "Модели, которые создают новый текст, изображения, код и другие артефакты.",
+        description:
+          "GenAI-модели учатся на больших датасетах и генерируют новые примеры, похожие на обучающие. Примеры: LLM для текста, diffusion‑модели для изображений, модели для аудио и видео.",
+        links: ["LLM", "Diffusion Model"]
+      },
+      {
+        term: "LLM (Large Language Model)",
+        category: "Generative AI",
+        tags: ["LLM"],
+        level: "Intro",
+        tagline: "Крупная языковая модель, генерирующая текст по запросу.",
+        description:
+          "LLM обучаются на огромных текстовых корпусах и могут отвечать на вопросы, писать код, резюмировать и выполнять множество задач в одном интерфейсе. Ключевая идея — предсказание следующего токена.",
+        links: ["Transformer", "Token", "Context Window"]
+      },
+      {
+        term: "Context Window",
+        category: "Generative AI",
+        tags: ["LLM"],
+        level: "Intro",
+        tagline: "Максимальный объём текста, который модель может &laquo;держать в голове&raquo; за один запрос.",
+        description:
+          "Измеряется в токенах. Чем больше контекстное окно, тем больше сообщений, документов и истории диалога можно передать модели за раз.",
+        links: ["LLM", "Token", "RAG"]
+      },
+      {
+        term: "Token",
+        category: "Generative AI",
+        tags: ["LLM"],
+        level: "Intro",
+        tagline: "Фрагмент текста (символ, слог или слово), используемый моделью.",
+        description:
+          "LLM работают не напрямую со словами, а с токенами — единицами, полученными разбиением текста. Токены важны для оценки стоимости, длины запроса и ограничений контекста.",
+        links: ["LLM", "Context Window"]
+      },
+      {
+        term: "Prompt",
+        category: "Generative AI",
+        tags: ["Prompting"],
+        level: "Intro",
+        tagline: "Текстовый запрос к модели: инструкция, контекст и примеры.",
+        description:
+          "Prompt задаёт задачу и формат ответа. Его структура и формулировка сильно влияют на поведение модели, особенно без дополнительной настройки.",
+        links: ["Prompt Engineering", "System Prompt"]
+      },
+      {
+        term: "Prompt Engineering",
+        category: "Generative AI",
+        tags: ["Prompting"],
+        level: "Intermediate",
+        tagline: "Практика проектирования prompt‑ов для более надёжных и полезных ответов.",
+        description:
+          "Включает выбор ролей, структуры, примеров, ограничений и проверок. Постепенно переходит в более широкий термин — prompt design и interaction design для LLM‑систем.",
+        links: ["Few-shot Prompting", "Chain-of-Thought"]
+      },
+      {
+        term: "System Prompt",
+        category: "Generative AI",
+        tags: ["Prompting"],
+        level: "Intermediate",
+        tagline: "Скрытая или базовая инструкция, задающая роль и стиль модели.",
+        description:
+          "System prompt определяет базовое поведение ассистента (тон, ограничения, цели). Пользователь его обычно не видит, но он сильно влияет на все ответы.",
+        links: ["Prompt", "Guardrails"]
+      },
+      {
+        term: "Few-shot Prompting",
+        category: "Generative AI",
+        tags: ["Prompting"],
+        level: "Intermediate",
+        tagline: "Даем модели несколько примеров, чтобы показать, что именно мы хотим.",
+        description:
+          "Модель получает 2–5 (или больше) примеров вход → выход в запросе и обобщает паттерн. Полезно, когда нет полноценного fine‑tuning, но нужна специфичная форма ответа.",
+        links: ["Prompt Engineering", "Fine-tuning"]
+      },
+      {
+        term: "Chain-of-Thought (CoT)",
+        category: "Generative AI",
+        tags: ["Reasoning"],
+        level: "Advanced",
+        tagline: "Подход, когда модель явно пишет рассуждения перед финальным ответом.",
+        description:
+          "CoT‑prompting поощряет модель шаг за шагом расписывать логику решения. Это повышает качество в задачах рассуждения, но требует аккуратного обращения с приватностью reasoning.",
+        links: ["Reasoning", "Toolformer"]
+      },
+      {
+        term: "Toolformer / Tools API",
+        category: "Agents & Tools",
+        tags: ["Tools"],
+        level: "Advanced",
+        tagline: "Модели, умеющие вызывать внешние инструменты (API, базы данных, код).",
+        description:
+          "Tools API позволяет LLM решать задачи, вызывая функции: делать запросы к сервисам, запускать код, работать с файлами. Модель решает, когда и какой инструмент вызвать.",
+        links: ["Function Calling", "Agentic AI"]
+      },
+
+      // Agents & Tools
+      {
+        term: "Agentic AI",
+        category: "Agents & Tools",
+        tags: ["Agents"],
+        level: "Intermediate",
+        tagline: "Системы, которые сами планируют, вызывают инструменты и выполняют шаги.",
+        description:
+          "Agentic AI добавляет поверх LLM механизмы планирования, памяти и действий. Агент может разбивать задачу на шаги, проверять результаты и обращаться к внешним API.",
+        links: ["Tools API", "Planning", "Memory"]
+      },
+      {
+        term: "AI Agent",
+        category: "Agents & Tools",
+        tags: ["Agents"],
+        level: "Intro",
+        tagline: "Конкретный &laquo;исполнитель&raquo; на основе AI для задач: ресёрч, код, операции.",
+        description:
+          "Агент — это связка LLM + инструменты + правила. Например, агент‑ресёрчер, агент‑девелопер, агент‑оператор саппорта. Каждый имеет свою роль, доступ к данным и ограничения.",
+        links: ["Agentic AI", "Orchestration"]
+      },
+      {
+        term: "Orchestration",
+        category: "Agents & Tools",
+        tags: ["MLOps", "Agents"],
+        level: "Intermediate",
+        tagline: "Координация нескольких моделей и агентов в одной системе.",
+        description:
+          "Оркестрация управляет тем, какая модель за что отвечает, как они общаются и как объединяются результаты. Важно для сложных pipelines с несколькими этапами обработки.",
+        links: ["Workflow", "Agentic AI"]
+      },
+      {
+        term: "Function Calling",
+        category: "Agents & Tools",
+        tags: ["Tools"],
+        level: "Intermediate",
+        tagline: "Механизм, через который LLM вызывает функции с структурированными аргументами.",
+        description:
+          "Модель возвращает специальный формат ответа, который интерпретируется как вызов функции. После выполнения функции результат снова передаётся модели для продолжения диалога.",
+        links: ["Tools API", "JSON Schema"]
+      },
+      {
+        term: "MCP (Model Context Protocol)",
+        category: "Agents & Tools",
+        tags: ["Infra"],
+        level: "Advanced",
+        tagline: "Протокол для подключения моделей к внешним данным и инструментам.",
+        description:
+          "MCP стандартизирует ways, как модели получают доступ к файловым системам, API и другим ресурсам. Это упрощает создание кросс‑платформенных AI‑инструментов.",
+        links: ["Tools API", "RAG"]
+      },
+      {
+        term: "RAG (Retrieval-Augmented Generation)",
+        category: "Agents & Tools",
+        tags: ["Retrieval"],
+        level: "Intermediate",
+        tagline: "Модель сначала ищет релевантные документы, а затем генерирует ответ, опираясь на них.",
+        description:
+          "RAG разделяет задачу на retrieval (поиск фрагментов текстов) и generation. Это уменьшает галлюцинации и позволяет модели опираться на актуальные данные.",
+        links: ["Vector Database", "Embedding", "Context Window"]
+      },
+      {
+        term: "World Model",
+        category: "Agents & Tools",
+        tags: ["Reasoning"],
+        level: "Advanced",
+        tagline: "Внутреннее представление о том, как устроен мир и его динамика.",
+        description:
+          "World models стремятся моделировать не только статические факты, но и причинно‑следственные связи, динамику среды и возможные будущие состояния. Тренд 2025–2026 годов.",
+        links: ["Agentic AI", "Planning"]
+      },
+
+      // Data & Infra
+      {
+        term: "Dataset",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intro",
+        tagline: "Набор данных, на котором обучают или тестируют модель.",
+        description:
+          "Датасеты бывают открытыми и приватными, синтетическими и реальными. Качество и разнообразие данных сильно влияют на качество модели.",
+        links: ["Training Data", "Test Set"]
+      },
+      {
+        term: "Training Data",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intro",
+        tagline: "Подмножество данных, на котором модель учится.",
+        description:
+          "Эти данные используются для обновления весов модели. Если они содержат шум или bias, модель будет наследовать эти проблемы.",
+        links: ["Dataset", "Overfitting"]
+      },
+      {
+        term: "Test Set",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intro",
+        tagline: "Отдельный набор данных для оценки модели после обучения.",
+        description:
+          "Test set не используется при обучении и помогает измерять обобщающую способность модели. Важно не &laquo;подглядывать&raquo; в test set при настройке модели.",
+        links: ["Validation Set", "Metrics"]
+      },
+      {
+        term: "Validation Set",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intermediate",
+        tagline: "Данные для подбора гиперпараметров и выбора лучшей версии модели.",
+        description:
+          "Validation set помогает решать, когда остановить обучение, какие гиперпараметры выбрать и какую модель выкатить в прод.",
+        links: ["Early Stopping", "Cross-validation"]
+      },
+      {
+        term: "Vector Database",
+        category: "Data & Infra",
+        tags: ["Retrieval"],
+        level: "Intermediate",
+        tagline: "База данных, оптимизированная под хранение и поиск векторов (эмбеддингов).",
+        description:
+          "Vector DB хранит embeddings и позволяет делать similarity search по метрике расстояния. Ключевой компонент RAG‑систем.",
+        links: ["Embedding", "RAG"]
+      },
+      {
+        term: "Embedding",
+        category: "Data & Infra",
+        tags: ["Representation"],
+        level: "Intermediate",
+        tagline: "Векторное представление текста, изображения или другого объекта.",
+        description:
+          "Embedding переводит объект в точку в многомерном пространстве так, что похожие объекты оказываются близко друг к другу. Используется для поиска, кластеризации и рекомендаций.",
+        links: ["Vector Database", "Similarity Search"]
+      },
+      {
+        term: "Latency",
+        category: "Data & Infra",
+        tags: ["Infra"],
+        level: "Intro",
+        tagline: "Задержка ответа модели или сервиса.",
+        description:
+          "Latency измеряется в миллисекундах или секундах и включает время на inference, сетевые запросы и оркестрацию. Важный фактор UX и стоимости.",
+        links: ["Throughput", "Inference"]
+      },
+      {
+        term: "Inference",
+        category: "Data & Infra",
+        tags: ["Infra"],
+        level: "Intro",
+        tagline: "Фаза, когда обученная модель делает предсказания на новых данных.",
+        description:
+          "В отличие от обучения (training), inference обычно жёстче ограничен по времени и ресурсам. Для LLM сюда входят генерация токенов, вызовы инструментов и retrieval.",
+        links: ["Latency", "Serving"]
+      },
+      {
+        term: "Serving",
+        category: "Data & Infra",
+        tags: ["Infra"],
+        level: "Intermediate",
+        tagline: "Как модель развёрнута и доступна пользователям или сервисам.",
+        description:
+          "Serving покрывает API, авто‑масштабирование, кэширование и observability. Цель — стабильный, быстрый и предсказуемый доступ к модели в проде.",
+        links: ["MLOps", "Latency"]
+      },
+      {
+        term: "MLOps",
+        category: "Data & Infra",
+        tags: ["Ops"],
+        level: "Intermediate",
+        tagline: "Практики доставки и сопровождения ML/AI‑систем в проде.",
+        description:
+          "Включает CI/CD для моделей, мониторинг, управление версиями, канарейки и rollback. В GenAI‑эпоху MLOps расширяется до LLMOps и PromptOps.",
+        links: ["LLMOps", "Monitoring"]
+      },
+
+      // Safety & Ethics
+      {
+        term: "AI Safety",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Intermediate",
+        tagline: "Область, занимающаяся рисками и безопасностью AI‑систем.",
+        description:
+          "AI Safety включает технические и социотехнические подходы к снижению рисков: от неправильного использования до долгосрочных сценариев. Важна и для стартапов, и для больших компаний.",
+        links: ["Alignment", "Red Teaming"]
+      },
+      {
+        term: "Alignment",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Advanced",
+        tagline: "Насколько поведение модели соответствует человеческим ценностям и целям.",
+        description:
+          "Alignment‑исследования ищут способы сделать мощные модели предсказуемыми, надёжными и ориентированными на человеческое благо. Включают RLHF, RLAIF и другие техники.",
+        links: ["RLHF", "RLAIF"]
+      },
+      {
+        term: "RLHF (Reinforcement Learning from Human Feedback)",
+        category: "Safety & Ethics",
+        tags: ["RL", "Safety"],
+        level: "Advanced",
+        tagline: "Дообучение моделей на основе оценок людей.",
+        description:
+          "Модель сначала обучают на данных, а затем корректируют её поведение с помощью RL, используя человеческие оценки ответов (какой лучше/хуже). Это помогает формировать желаемый стиль и границы.",
+        links: ["Reinforcement Learning", "Alignment"]
+      },
+      {
+        term: "RLAIF (RL from AI Feedback)",
+        category: "Safety & Ethics",
+        tags: ["RL", "Safety"],
+        level: "Advanced",
+        tagline: "Использование других моделей для оценки и улучшения поведения.",
+        description:
+          "Вместо людей (или вместе с ними) оценки генерируются вспомогательными моделями. Это масштабирует RLHF‑подобные схемы, но требует аккуратного дизайна, чтобы не усилить ошибки.",
+        links: ["RLHF", "AI Safety"]
+      },
+      {
+        term: "Bias",
+        category: "Safety & Ethics",
+        tags: ["Ethics"],
+        level: "Intro",
+        tagline: "Систематические перекосы в данных и ответах модели.",
+        description:
+          "Bias может возникать из тренинговых данных, метрик или формулировок. Он проявляется в несправедливых или некорректных выводах по отношению к группам людей.",
+        links: ["Fairness", "Data Quality"]
+      },
+      {
+        term: "Hallucination",
+        category: "Safety & Ethics",
+        tags: ["GenAI"],
+        level: "Intro",
+        tagline: "Уверенный, но фактически неверный ответ модели.",
+        description:
+          "LLM могут &laquo;придумывать&raquo; факты, которых не было в обучении или контексте. RAG, верификация и ограничения помогуют снижать частоту и серьёзность галлюцинаций.",
+        links: ["RAG", "Verification"]
+      },
+      {
+        term: "Guardrails",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Intermediate",
+        tagline: "Механизмы ограничений и фильтров вокруг модели.",
+        description:
+          "Guardrails — это политики, фильтры, проверки и шаблоны, которые ограничивают тематику, стиль и поведение модели для соответствия требованиям продукта и закона.",
+        links: ["System Prompt", "Safety Policy"]
+      },
+      {
+        term: "Red Teaming",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Advanced",
+        tagline: "Активный поиск уязвимостей и опасного поведения AI‑систем.",
+        description:
+          "Команды или внешние исследователи пытаются &laquo;сломать&raquo; систему: получить вредный контент, обойти фильтры, найти edge cases. Результаты помогают улучшить безопасность и дизайн.",
+        links: ["AI Safety", "Evaluation"]
+      },
+      {
+        term: "Safety Policy",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Intro",
+        tagline: "Набор правил, описывающих допустимое и недопустимое поведение модели.",
+        description:
+          "Включает категории запрещённого контента, границы советов, требования к тону и прозрачности. Реализуется через system prompts, guardrails и модерацию.",
+        links: ["Guardrails", "AI Safety"]
+      },
+
+      // Metrics & Evaluation
+      {
+        term: "Metric",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intro",
+        tagline: "Числовой показатель качества модели или системы.",
+        description:
+          "Metrics используются, чтобы объективно сравнивать модели и отслеживать улучшения. Важно понимать, что одна метрика редко покрывает всё поведение системы.",
+        links: ["Evaluation", "Accuracy"]
+      },
+      {
+        term: "Accuracy",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intro",
+        tagline: "Доля правильных предсказаний модели.",
+        description:
+          "Простая и интуитивная метрика, но плохо подходит для несбалансированных данных. В GenAI‑сценариях заменяется более сложными метриками качества ответа.",
+        links: ["Precision", "Recall"]
+      },
+      {
+        term: "Precision & Recall",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intermediate",
+        tagline: "Баланс между точностью и полнотой ответов.",
+        description:
+          "Precision показывает долю корректных среди найденных, Recall — долю найденных среди всех релевантных. Важно смотреть на обе метрики в паре.",
+        links: ["F1 Score", "Metric"]
+      },
+      {
+        term: "F1 Score",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intermediate",
+        tagline: "Гармоническое среднее между precision и recall.",
+        description:
+          "F1 полезен, когда нужно балансировать между пропусками и ложными срабатываниями. Часто применяется в задачах классификации.",
+        links: ["Precision & Recall"]
+      },
+      {
+        term: "Evaluation (Eval)",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intermediate",
+        tagline: "Систематическое измерение качества и поведения модели.",
+        description:
+          "В GenAI это совмещает автоматические метрики, human eval и scenario‑based тесты (например, безопасность, UX, бизнес‑метрики).",
+        links: ["Metric", "Red Teaming"]
+      },
+      {
+        term: "Benchmark",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intermediate",
+        tagline: "Стандартный набор задач и данных для сравнения моделей.",
+        description:
+          "Benchmarks помогают сравнивать разные модели на единых условиях. Для LLM добавляются комплексные multi‑task и safety‑ориентированные наборы.",
+        links: ["Evaluation", "Metrics"]
+      },
+      {
+        term: "Human Eval",
+        category: "Metrics & Eval",
+        tags: ["Evaluation"],
+        level: "Intermediate",
+        tagline: "Оценка качества ответов людьми‑аннотаторами.",
+        description:
+          "Особенно важна для сложных задач, где автоматические метрики слабо коррелируют с реальной полезностью. Часто используется при сравнении поколений моделей.",
+        links: ["Evaluation", "RLHF"]
+      },
+
+      // Extra modern topics
+      {
+        term: "Multimodal Model",
+        category: "Generative AI",
+        tags: ["Multimodal"],
+        level: "Intermediate",
+        tagline: "Модель, которая работает сразу с несколькими типами данных.",
+        description:
+          "Например, текст + изображение, текст + аудио или видео. Multimodal LLM могут описывать картинки, читать PDF, анализировать диаграммы и многое другое.",
+        links: ["LLM", "Vision Transformer"]
+      },
+      {
+        term: "Synthetic Data",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intermediate",
+        tagline: "Сгенерированные моделью данные для обучения или тестирования.",
+        description:
+          "Synthetic data помогает расширить датасеты, закрыть privacy‑ограничения и создавать edge cases, которых мало в реальном мире. Требует аккуратного контроля качества.",
+        links: ["Data Augmentation", "GenAI"]
+      },
+      {
+        term: "Data Augmentation",
+        category: "Data & Infra",
+        tags: ["Data"],
+        level: "Intermediate",
+        tagline: "Техники искусственного расширения обучающего набора.",
+        description:
+          "Включают вращение и обрезку изображений, перефразирование текста, добавление шума. Помогают улучшить обобщение моделей.",
+        links: ["Synthetic Data"]
+      },
+      {
+        term: "Knowledge Cutoff",
+        category: "Generative AI",
+        tags: ["Limitations"],
+        level: "Intro",
+        tagline: "Дата, после которой модель не знает новых фактов из учебных данных.",
+        description:
+          "LLM обучаются на данных до определённого момента. После cutoff модель не знает о событиях, произошедших позже, если только ей не дали доступ к внешним источникам.",
+        links: ["RAG", "Retrieval"]
+      },
+      {
+        term: "Reasoning",
+        category: "Generative AI",
+        tags: ["Reasoning"],
+        level: "Advanced",
+        tagline: "Способность модели разбирать задачу на шаги и строить логические цепочки.",
+        description:
+          "Исследования 2024–2026 годов фокусируются на том, как улучшить reasoning: через специальные архитектуры, обучение, внешние инструменты и structured thinking.",
+        links: ["Chain-of-Thought", "World Model"]
+      },
+      {
+        term: "Tool Use",
+        category: "Agents & Tools",
+        tags: ["Tools"],
+        level: "Intermediate",
+        tagline: "Способность модели выбирать и вызывать внешние функции для решения задач.",
+        description:
+          "Вместо того чтобы &laquo;выдумывать&raquo; ответ, модель вызывает калькулятор, базу данных, браузер или внутренние сервисы, а затем интерпретирует результат.",
+        links: ["Function Calling", "Agentic AI"]
+      },
+      {
+        term: "Guarded Generation",
+        category: "Safety & Ethics",
+        tags: ["Safety"],
+        level: "Intermediate",
+        tagline: "Генерация, обёрнутая проверками и фильтрами по пути.",
+        description:
+          "Включает inline‑фильтры, пост‑обработку и перегенерацию при нарушении правил. Цель — снизить риск вредного или нежелательного контента.",
+        links: ["Guardrails", "Safety Policy"]
+      },
+      {
+        term: "Observability",
+        category: "Data & Infra",
+        tags: ["Ops"],
+        level: "Intermediate",
+        tagline: "Видимость внутренней работы AI‑системы в проде.",
+        description:
+          "Логи запросов, метрики, трассировка и алерты помогают понять, как модель ведёт себя &laquo;в бою&raquo; и где её нужно улучшить.",
+        links: ["MLOps", "Monitoring"]
+      },
+      {
+        term: "Monitoring",
+        category: "Data & Infra",
+        tags: ["Ops"],
+        level: "Intermediate",
+        tagline: "Непрерывное отслеживание качества, ошибок и рисков.",
+        description:
+          "Включает технические метрики (latency, ошибки), бизнес‑метрики и сигналы качества (например, жалобы пользователей или аномальную активность).",
+        links: ["Observability", "MLOps"]
+      }
+    ];
+
+    function createTermItem(termObj) {
+      const item = document.createElement("div");
+      item.className = "term-item";
+
+      const left = document.createElement("div");
+      const right = document.createElement("div");
+      right.className = "term-right";
+
+      const header = document.createElement("div");
+      header.className = "term-header";
+
+      const name = document.createElement("div");
+      name.className = "term-name";
+      name.textContent = termObj.term;
+      name.title = "Click to copy term";
+      name.style.cursor = "pointer";
+      name.addEventListener("click", () => {
+        navigator.clipboard.writeText(termObj.term).catch(() => {});
+      });
+
+      const tag = document.createElement("div");
+      tag.className = "term-tag";
+      tag.textContent = termObj.category;
+
+      header.appendChild(name);
+      header.appendChild(tag);
+
+      const meta = document.createElement("div");
+      meta.className = "term-meta";
+      meta.textContent = `Tags: ${termObj.tags.join(", ")} · Level: ${termObj.level}`;
+
+      const desc = document.createElement("div");
+      desc.className = "term-desc";
+      desc.textContent = termObj.description;
+
+      left.appendChild(header);
+      left.appendChild(meta);
+      left.appendChild(desc);
+
+      const label = document.createElement("div");
+      label.className = "term-label";
+      label.textContent = termObj.tagline;
+      right.appendChild(label);
+
+      if (termObj.tagline) {
+        const tagline = document.createElement("div");
+        tagline.className = "term-tagline";
+        tagline.textContent = termObj.tagline;
+        right.appendChild(tagline);
+      }
+
+      if (termObj.links && termObj.links.length) {
+        const links = document.createElement("div");
+        links.className = "term-links";
+        termObj.links.forEach((l) => {
+          const pill = document.createElement("div");
+          pill.className = "term-link-pill";
+          pill.textContent = l;
+          links.appendChild(pill);
+        });
+        right.appendChild(links);
+      }
+
+      item.appendChild(left);
+      item.appendChild(right);
+
+      return item;
+    }
+
+    const termListEl = document.getElementById("termList");
+    const searchInputEl = document.getElementById("searchInput");
+    const visibleCountEl = document.getElementById("visibleCount");
+    const selectedCategoryLabelEl = document.getElementById("selectedCategoryLabel");
+    const chipsEl = document.getElementById("categoryChips");
+
+    function renderTerms(filterCategory = "all", search = "") {
+      termListEl.innerHTML = "";
+      const normalizedSearch = search.trim().toLowerCase();
+      let visibleCount = 0;
+
+      TERMS.forEach((t) => {
+        const matchesCategory = filterCategory === "all" || t.category === filterCategory;
+        const text = `${t.term} ${t.category} ${t.tags.join(" ")} ${t.description} ${t.tagline}`.toLowerCase();
+        const matchesSearch = !normalizedSearch || text.includes(normalizedSearch);
+
+        if (matchesCategory && matchesSearch) {
+          const item = createTermItem(t);
+          if (normalizedSearch && text.includes(normalizedSearch)) {
+            item.classList.add("highlighted");
+          }
+          termListEl.appendChild(item);
+          visibleCount += 1;
+        }
+      });
+
+      visibleCountEl.textContent = visibleCount;
+    }
+
+    renderTerms("all", "");
+
+    chipsEl.addEventListener("click", (e) => {
+      if (e.target.matches(".chip")) {
+        const category = e.target.getAttribute("data-category");
+        chipsEl.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+        e.target.classList.add("active");
+        selectedCategoryLabelEl.textContent = category;
+        renderTerms(category, searchInputEl.value);
+      }
+    });
+
+    searchInputEl.addEventListener("input", () => {
+      const activeChip = chipsEl.querySelector(".chip.active");
+      const category = activeChip ? activeChip.getAttribute("data-category") : "all";
+      renderTerms(category, searchInputEl.value);
+    });
+
+    function scrollToGlossary() {
+      const el = document.getElementById("glossary");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  </script>
+</body>
+</html>
